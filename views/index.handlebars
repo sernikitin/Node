@@ -1,25 +1,25 @@
 <div class="container">
     <div class="row">
-        {{!--  --}}
+        {{!-- --}}
         <div class="col-md-6">
             <h2>Burgers to Eat!</h2>
             {{#each burgers}}
             <div>
                 {{this.id}}. {{this.burger_name}}
 
-            <form id="update" action="/burgers/toDelete/{{this.id}}" method="POST">
-           <input type="hidden" name="toDelete" value="true">
-            <button class="btn btn-danger" type="submit">delete it!</button>
-          </form>
+                <form id="update" action="/burgers/toDelete/{{this.id}}" method="POST">
+                    <input type="hidden" name="toDelete" value="true">
+                    <button class="btn btn-danger" type="submit">delete it!</button>
+                </form>
 
             </div>
             {{/each}}
         </div>
-        {{!--  --}}
+        {{!-- --}}
         <div class="col-sm-6">
             <h2>old stuff</h2>
         </div>
-        {{!--  --}}
+        {{!-- --}}
     </div>
 
     <div class="col-md-6">

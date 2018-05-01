@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 var burger = require('../models/burger.js');
 
+router.get("/", function (req, res) {
+    res.redirect("/burgers")
+
+})
 
 router.get("/burgers", function (req, res) {
     burger.selectAll(function (data) {
@@ -12,7 +16,6 @@ router.get("/burgers", function (req, res) {
 router.post("/burgers/add", function (req, res) {
     // console.log("add was clicked ")
     // console.log(req.body.burger_name)
-    // console.log("bla lba")
     burger.insertNewBurger(req.body.burger_name, function () {
         res.redirect("/burgers")
     });
