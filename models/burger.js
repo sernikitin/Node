@@ -11,10 +11,8 @@ var burger = {
 			insert_output(res);
 		});
 	},
-	updateBurger: function (objColVal, condition, table_output) {
-		orm.updateBurger('burgers_db', objColVal, condition, function (res) {
-			table_output(res);
-		});
+	updateBurger: function () {
+// 
 	}
 };
 

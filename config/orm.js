@@ -18,11 +18,13 @@ var orm = {
 			insert_output(result);
 		});
     },
-    updateBurger: function () {
-        var query = 'SELECT * FROM burgers_db'
-        connection.query(query, function (err, result) {
-            console.log(result)
-        })
+    
+    updateBurger: function (userInput, insert_output) {
+		var queryString = 'UPDATE burgers_db SET devoured = ? WHERE id = ?'
+		connection.query(queryString, userInput, function (err, result) {
+			if (err) throw err;
+			insert_output(result);
+		});
     }
 }
 
