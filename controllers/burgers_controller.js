@@ -21,9 +21,8 @@ router.post("/burgers/add", function (req, res) {
     });
 })
 router.post('/burgers/toDelete/:id', function (req, res) {
-
-    console.log(req.body.toDelete)
-    console.log(req.params.id)
-    res.redirect("/burgers")
+    burger.updateBurger(req.params.id, function () {
+        res.redirect("/burgers")
+    })
 })
 module.exports = router

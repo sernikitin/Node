@@ -1,19 +1,21 @@
 var orm = require('../config/orm.js')
 
 var burger = {
-	selectAll: function (table_output) {
+	selectAll: function (cb) {
 		orm.selectAll('burgers_db', function (res) {
-			table_output(res);
+			cb(res);
 		});
 	},
-	insertNewBurger: function (userInput, insert_output) {
+	insertNewBurger: function (userInput, cb) {
 		orm.insertNewBurger(userInput,  function (res) {
-			insert_output(res);
+			cb(res);
 		});
 	},
-	updateBurger: function () {
-// 
-	}
+	updateBurger: function(toDelete, cb) {
+		orm.updateBurger(toDelete, function(res) {
+		  cb(res);
+		});
+	  }
 };
 
 module.exports = burger
